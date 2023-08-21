@@ -1,18 +1,22 @@
 <template>
    <button @click="openModal">Open Model</button>
-  <div class="modal" v-if="isOpen">
-    <div class="modal-content">
+  <div class="modal container-fluid" v-if="isOpen">
+    <div class="modal-content container-fluid">
       <!-- Your modal content goes here -->
-
-      
-
-      <button @click="closeModal">Close</button>
+        <ImageCard />
+      <div>
+        <button class="btn btn-danger btn-sm" style="float: right;" @click="closeModal">Close</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import ImageCard from './ImageCard.vue';
 export default {
+  components: {
+    ImageCard
+  },
   data() {
     return {
       isOpen: false,
@@ -45,6 +49,7 @@ export default {
 
 .modal-content {
   background-color: white;
+  width: 50%;
   padding: 20px;
   border-radius: 5px;
 }

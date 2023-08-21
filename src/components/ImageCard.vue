@@ -1,11 +1,11 @@
 <template>
-  <div class="image-container">
+  <div class="image-container container-fluid topdiv">
     <div class="image-card" :class="{ 'flipped': isFlipped }">
       <div class="front">
-        <img :src="frontImageUrl" alt="Front Image" />
+        <img :src="frontImageUrl" class="img-fluid" alt="Front Image" />
       </div>
       <div class="back">
-        <img :src="backImageUrl" alt="Back Image" />
+        <img :src="backImageUrl" class="img-fluid" alt="Back Image" />
       </div>
     </div>
     <div>
