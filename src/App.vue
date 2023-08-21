@@ -16,8 +16,8 @@ export default {
   components: {
     HelloWorld,
     ImageCard
-  }
-}
+  },
+};
 </script>
 
 <style>

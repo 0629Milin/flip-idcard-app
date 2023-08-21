@@ -1,13 +1,12 @@
 <template>
-  <div>
-    <button @click="openModal">Open Modal</button>
-    
-    <!-- Modal -->
-    <div class="modal" :class="{ 'modal-open': isModalOpen }">
-      <div class="modal-content">
-        <span class="close" @click="closeModal">&times;</span>
-        <p>This is a modal popup!</p>
-      </div>
+   <button @click="openModal">Open Model</button>
+  <div class="modal" v-if="isOpen">
+    <div class="modal-content">
+      <!-- Your modal content goes here -->
+
+      
+
+      <button @click="closeModal">Close</button>
     </div>
   </div>
 </template>
@@ -16,54 +15,37 @@
 export default {
   data() {
     return {
-      isModalOpen: false
+      isOpen: false,
     };
   },
   methods: {
     openModal() {
-      this.isModalOpen = true;
+      this.isOpen = true;
     },
     closeModal() {
-      this.isModalOpen = false;
-    }
-  }
+      this.isOpen = false;
+    },
+  },
 };
 </script>
 
-<style>
-/* Styles for the modal and button */
+<style scoped>
 .modal {
-  display: none; /* Hide modal by default */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
-  z-index: 1;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-}
-
-.modal-open {
-  display: block; /* Show modal when isModalOpen is true */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 
 .modal-content {
-  background-color: #fff;
-  margin: 15% auto;
+  background-color: white;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
-  position: relative;
-}
-
-.close {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
+  border-radius: 5px;
 }
 </style>
